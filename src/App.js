@@ -1,9 +1,10 @@
 import React from 'react'
-import Table from './Table/Table'
+//import Table from './Table/Table'
+import Userlist from './User/Userlist'
 const App = () => {
   return (
     <div>
-      <h1><Table/></h1>
+      <h1><Userlist/></h1>
     </div>
   )
 }
