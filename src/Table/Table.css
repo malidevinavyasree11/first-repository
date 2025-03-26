@@ -1,0 +1,17 @@
+.datatable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    font-size: medium;
+  }
+  
+  th {
+    background-color:lightblue;
+    text-align: left;
+  }
+  
