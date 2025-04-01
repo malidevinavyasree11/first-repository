@@ -7,10 +7,11 @@ h1{
     display:block;
 }
 .nav ul {
+    list-style-type: none; 
     padding: 10px;
     display:flex;
 }
 .nav li {
     margin-bottom: 10px;
-    padding:20px;
+    padding: 20px;
 }
