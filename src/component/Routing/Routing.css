@@ -1,0 +1,16 @@
+h1{
+    font-size: medium;
+    display: block;
+}
+.nav{
+    background-color: aqua;
+    display:block;
+}
+.nav ul {
+    padding: 10px;
+    display:flex;
+}
+.nav li {
+    margin-bottom: 10px;
+    padding:20px;
+}
