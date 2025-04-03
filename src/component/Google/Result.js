@@ -45,8 +45,8 @@ const ResultsPage = () => {
         <ul style={styles.resultsList}>
           {results.map((user) => (
             <li key={user.title} style={styles.resultItem}>
-              <a href={user.link} target="_blank" rel="noopener noreferrer" style={styles.title}>{user.title}</a>
-              <p style={styles.link}>{user.link}</p>
+              <a href={user.link} style={styles.title}>{user.link}</a>
+              <p style={styles.link}>{user.title}</p>
               <p style={styles.description}>{user.description}</p>
             </li>
           ))}
@@ -84,7 +84,7 @@ const styles = {
     marginBottom: '5px',
   },
   link: {
-    fontSize: '14px',
+    fontSize: '20px',
     color: '#006621',
     marginBottom: '5px',
   },

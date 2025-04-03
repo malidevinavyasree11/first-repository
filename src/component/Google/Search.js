@@ -4,7 +4,6 @@ import image from './image.png';
 const SearchPage = () => {
   const [query, setQuery] = useState('');
   const navigate = useNavigate();
-
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Search Query:', query); 
