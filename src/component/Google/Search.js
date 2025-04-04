@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import image from './image.png';
 const SearchPage = () => {
-  const [query, setQuery] = useState('');
+  const [data, setData] = useState('');
   const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Search Query:', query); 
-    if (query.trim()) {
-      navigate(`/results?query=${query}`);
+    console.log('Search Data:', data);
+    if (data.trim()) {
+      navigate(`/results?data=${data}`);
     }
   };
   return (
@@ -18,8 +18,8 @@ const SearchPage = () => {
         <input
           type="text"
           placeholder="Search here..."
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
+          value={data}
+          onChange={(e) => setData(e.target.value)}
           style={styles.input}
         />
         <button type="submit" style={styles.button}>
@@ -29,7 +29,6 @@ const SearchPage = () => {
     </div>
   );
 };
-
 const styles = {
   container: {
     textAlign: 'center',

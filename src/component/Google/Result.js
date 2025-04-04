@@ -2,25 +2,25 @@ import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 const ResultsPage = () => {
   const location = useLocation();
-  const [query] = useState(new URLSearchParams(location.search).get('query'));
+  const [data] = useState(new URLSearchParams(location.search).get('data'));
   const [results, setResults] = useState([]);
   const [error, setError] = useState(null);
   useEffect(() => {
     const fetchData = async () => {
-      console.log('Fetching data for query:', query); 
+      console.log('Fetching data for:', data);
       try {
-        const apiUrl = `http://localhost:3033/user?data=${query}`;
-        console.log('Requesting URL:', apiUrl);
-        const response = await fetch(apiUrl);
+        const api = `http://localhost:3034/user?data=${data}`;
+        console.log('Requesting URL:', api);
+        const response = await fetch(api);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
-        const data = await response.json();
-        console.log('API Response:', data); 
-        const filteredData = data.filter(item => 
-          item.title.includes(query) || 
-          item.description.includes(query) || 
-          item.link.includes(query)
+        const responseData = await response.json();
+        console.log('API Response:', responseData);
+        const filteredData = responseData.filter(item =>
+          item.title.includes(data) ||
+          item.description.includes(data) ||
+          item.link.includes(data)
         );
         if (filteredData.length > 0) {
           setResults(filteredData);
@@ -32,15 +32,16 @@ const ResultsPage = () => {
         setError('Error fetching data');
       }
     };
-    if (query) {
+    if (data) {
       fetchData();
     }
-  }, [query]);
+  }, [data]);
+
   console.log('Results:', results);
   if (error) return <p>{error}</p>;
   return (
     <div style={styles.container}>
-      <h1 style={styles.heading}>Search Results for "{query}"</h1>
+      <h1 style={styles.heading}>Search Results for "{data}"</h1>
       {results.length > 0 ? (
         <ul style={styles.resultsList}>
           {results.map((user) => (
@@ -57,6 +58,7 @@ const ResultsPage = () => {
     </div>
   );
 };
+
 const styles = {
   container: {
     padding: '20px',
