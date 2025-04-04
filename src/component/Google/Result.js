@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-const ResultsPage = () => {
+const Result = () => {
   const location = useLocation();
   const [data] = useState(new URLSearchParams(location.search).get('data'));
   const [results, setResults] = useState([]);
@@ -96,4 +96,4 @@ const styles = {
   },
 };
 
-export default ResultsPage;
+export default Result;

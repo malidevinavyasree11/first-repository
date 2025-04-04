@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import image from './image.png';
-const SearchPage = () => {
+const Search = () => {
   const [data, setData] = useState('');
   const navigate = useNavigate();
   const handleSubmit = (e) => {
@@ -51,4 +51,4 @@ const styles = {
   },
 };
 
-export default SearchPage;
+export default Search;
