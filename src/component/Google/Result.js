@@ -9,7 +9,8 @@ const Result = () => {
     const fetchData = async () => {
       console.log('Fetching data for:', data);
       try {
-        const api = `http://localhost:3034/user?data=${data}`;
+        const api = `http://localhost:4000/user?data=${data}`;
+        ;
         console.log('Requesting URL:', api);
         const response = await fetch(api);
         if (!response.ok) {
@@ -36,7 +37,6 @@ const Result = () => {
       fetchData();
     }
   }, [data]);
-
   console.log('Results:', results);
   if (error) return <p>{error}</p>;
   return (
@@ -58,7 +58,6 @@ const Result = () => {
     </div>
   );
 };
-
 const styles = {
   container: {
     padding: '20px',

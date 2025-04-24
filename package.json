@@ -6,6 +6,8 @@
     "@testing-library/react": "^16.2.0",
     "axios": "^1.8.4",
     "cra-template": "1.2.0",
+    "node": "^22.15.0",
+    "packages": "^0.0.8",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-scripts": "5.0.1",
@@ -38,5 +40,10 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^6.6.3",
     "react-router-dom": "^7.4.1"
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
